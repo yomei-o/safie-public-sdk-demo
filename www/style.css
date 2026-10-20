@@ -1,0 +1,23 @@
+:root { font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans JP", sans-serif; color: #1b1f23; background: #f4f6f8; }
+body { margin: 0; }
+header { padding: 20px 24px 8px; }
+header h1 { margin: 0 0 4px; font-size: 1.4rem; }
+.sub { margin: 0; color: #5a646e; font-size: 0.9rem; }
+main { padding: 8px 24px 40px; max-width: 1100px; }
+.card { background: #fff; border: 1px solid #dde3e8; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.card h2 { margin: 0 0 12px; font-size: 1.05rem; }
+.hint { color: #5a646e; font-size: 0.85rem; margin: 0 0 12px; }
+label { display: block; margin: 8px 0; font-size: 0.9rem; }
+label input { display: block; width: 100%; box-sizing: border-box; margin-top: 4px; padding: 8px 10px; font: inherit; font-family: ui-monospace, Consolas, monospace; border: 1px solid #c7ced5; border-radius: 6px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+button { font: inherit; padding: 8px 14px; border-radius: 6px; border: 1px solid #c7ced5; background: #fff; cursor: pointer; }
+button.primary { background: #0a6cff; border-color: #0a6cff; color: #fff; }
+button:disabled { opacity: 0.45; cursor: default; }
+pre { margin: 0; white-space: pre-wrap; word-break: break-all; font-size: 0.85rem; background: #f7f9fb; padding: 10px; border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e6ebf0; vertical-align: middle; }
+td img { width: 120px; height: auto; display: block; border-radius: 4px; background: #e6ebf0; }
+label.inline { display: inline-flex; align-items: center; gap: 4px; margin: 0; }
+#player { width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; margin: 12px 0; overflow: hidden; }
+#player-status { margin-top: 0; }
+code { font-family: ui-monospace, Consolas, monospace; background: #eef2f6; padding: 1px 4px; border-radius: 4px; }

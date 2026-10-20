@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safie OAuth Public Client Sample</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Safie OAuth2.0 (Public / PKCE) サンプル</h1>
+  <p class="sub">cpp-httplib は静的ファイルを返すだけ。認可・トークン管理・API 呼び出しは全てブラウザ上の Safie SDK (JavaScript) が行います。</p>
+</header>
+
+<main>
+  <section id="config" class="card">
+    <h2>設定</h2>
+    <p class="hint">Safie Developers で Client 種別 <b>Public</b> のアプリケーションを作成し、Redirect URI に
+      <code id="redirect-uri"></code> を登録した Client の Client ID を貼り付けてください。
+      Scope はアプリケーション作成後に表示される値をそのまま貼り付けます。</p>
+    <label>Client ID <input id="client-id" type="text" autocomplete="off" spellcheck="false" placeholder="例: abcdef0123456789"></label>
+    <label>Scope <input id="scope" type="text" autocomplete="off" spellcheck="false" placeholder="例: safie-api openid"></label>
+    <div class="row">
+      <button id="btn-save" type="button">保存</button>
+      <button id="btn-login" type="button" class="primary" disabled>Safie でログイン</button>
+      <button id="btn-logout" type="button" disabled>ログアウト</button>
+    </div>
+  </section>
+
+  <section id="status" class="card">
+    <h2>状態</h2>
+    <pre id="status-text">初期化中…</pre>
+  </section>
+
+  <section id="devices" class="card" hidden>
+    <h2>デバイス一覧 <span id="device-count"></span></h2>
+    <div class="row">
+      <button id="btn-reload" type="button">再読み込み</button>
+      <button id="btn-thumbs" type="button">サムネイルを取得</button>
+    </div>
+    <table>
+      <thead><tr><th>サムネイル</th><th>デバイス名</th><th>デバイスID</th><th>モデル</th><th>シリアル</th><th>配信中</th><th>接続中</th><th></th></tr></thead>
+      <tbody id="device-rows"></tbody>
+    </table>
+  </section>
+
+  <section id="player-section" class="card" hidden>
+    <h2>ライブ映像 <span id="player-device"></span></h2>
+    <div class="row">
+      <button id="btn-stop" type="button">停止</button>
+      <button id="btn-pause" type="button">一時停止 / 再開</button>
+      <label class="inline"><input id="chk-webrtc" type="checkbox"> 低遅延 (WebRTC)</label>
+      <label class="inline"><input id="chk-muted" type="checkbox"> ミュート</label>
+    </div>
+    <div id="player"></div>
+    <pre id="player-status">-</pre>
+  </section>
+</main>
+
+<!-- Safie SDK (JavaScript). 1.x 系の最新版。バージョン固定は /v1/1.10/ のように指定。 -->
+<script src="https://safie.link/sdk/js/api/v1/latest/"></script>
+<script src="app.js"></script>
+</body>
+</html>
