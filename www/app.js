@@ -57,7 +57,15 @@
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) return JSON.parse(raw);
     } catch (_) { /* storage unavailable or corrupt */ }
-    return { clientId: 'p557a696h2md', scope: 'safie-api openid' };
+    return { clientId: defaultClientId(), scope: 'safie-api openid' };
+  }
+
+  // Each Redirect URI needs its own Client in Safie Developers, so the default
+  // Client ID depends on where the page is served from.
+  function defaultClientId() {
+    if (location.hostname === 'yomei-o.github.io') return 'aqgp10u8rx94';
+    if (location.hostname === 'localhost') return 'p557a696h2md';
+    return '';
   }
 
   function saveConfig(cfg) {
