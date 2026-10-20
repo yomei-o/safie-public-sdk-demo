@@ -5,6 +5,7 @@ cpp-httplib で立てた HTTP サーバーが `www/` の静的ファイルを返
 
 ```
 server.cpp            cpp-httplib の静的ファイルサーバー（これだけが C++）
+serve.py              同じことをする Python 版（標準ライブラリのみ）
 third_party/httplib.h cpp-httplib v0.62.0（単一ヘッダ）
 www/index.html        画面
 www/app.js            Safie SDK を使った認可とデバイス一覧取得
@@ -56,6 +57,13 @@ build\Release\server.exe
 ```
 
 オプション: `--host localhost` `--port 8080` `--root www`
+
+Python 版（C++ をビルドしたくない場合。挙動は同じ）:
+
+```sh
+python serve.py            # 同じく http://localhost:8080/ で www/ を配信
+python serve.py --port 8081
+```
 
 ## 使い方
 
