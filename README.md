@@ -12,6 +12,8 @@ www/app.js            Safie SDK を使った認可とデバイス一覧取得
 www/style.css
 ```
 
+仕組み（CORS、iframe と postMessage、認可で得られるもの、動画の経路、誰のカメラが見えるか、公式サンプルとの違い）は [docs/how-it-works.md](docs/how-it-works.md) にまとめています。
+
 ## なぜ SDK 経由なのか
 
 Safie の REST API（`https://openapi.safie.link`）はブラウザからの直接呼び出しを CORS で拒否します
