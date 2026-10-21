@@ -1,5 +1,7 @@
 # Safie OAuth2.0 Public クライアント + cpp-httplib サンプル
 
+**デモ: [https://yomei-o.github.io/safie-public-sdk-demo/www/](https://yomei-o.github.io/safie-public-sdk-demo/www/)**（GitHub Pages。Safie アカウントでログインすると自分のカメラの一覧とライブ映像が見られます）
+
 cpp-httplib で立てた HTTP サーバーが `www/` の静的ファイルを返し、認可（PKCE）・トークン管理・Safie API 呼び出しは
 すべてブラウザ上の **Safie SDK (JavaScript)** が行う構成です。サーバー側にアプリケーションロジックも秘密情報もありません。
 
@@ -8,7 +10,7 @@ server.cpp            cpp-httplib の静的ファイルサーバー（これだ�
 serve.py              同じことをする Python 版（標準ライブラリのみ）
 third_party/httplib.h cpp-httplib v0.62.0（単一ヘッダ）
 www/index.html        画面
-www/app.js            Safie SDK を使った認可とデバイス一覧取得
+www/app.js            Safie SDK を使った認可、デバイス一覧、サムネイル、ライブ再生
 www/style.css
 ```
 
@@ -84,9 +86,7 @@ SDK が保持するトークンを消すだけで、Safie アカウント自体�
 このリポジトリは GitHub Pages（`main` ブランチのルート）で公開しています。アプリ本体は `www/` 以下なので、
 Pages 上の URL は次のとおりです（ルートの `index.html` はここへリダイレクトするだけ）。
 
-```
-https://yomei-o.github.io/safie-public-sdk-demo/www/
-```
+[https://yomei-o.github.io/safie-public-sdk-demo/www/](https://yomei-o.github.io/safie-public-sdk-demo/www/)
 
 `app.js` は Redirect URI を「今開いているページの URL（クエリ・ハッシュ・`index.html` を除いたもの）」として
 計算するので、Safie Developers 側でこの URL（末尾のスラッシュまで）を Redirect URI に登録した Client を作り、
